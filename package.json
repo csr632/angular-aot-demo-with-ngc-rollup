@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "compile": "node_modules/.bin/ngc -p src/tsconfig.app.json",
+    "rollup": "node_modules/.bin/rollup -c rollup-config.js",
+    "serve": "node copy-files && lite-server -c bs-config.aot.json",
+    "clean": "del-cli serve compile_output",
+    "aot": "npm run clean && npm run compile && npm run rollup && npm run serve"
   },
   "private": true,
   "dependencies": {
@@ -22,13 +21,19 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "jquery": "^3.3.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.6",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "del-cli": "^1.1.0",
+    "lite-server": "^2.3.0",
+    "rollup": "^0.55.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0",
     "typescript": "~2.5.3"
   }
 }
