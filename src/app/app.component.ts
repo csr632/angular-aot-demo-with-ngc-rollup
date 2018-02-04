@@ -6,7 +6,7 @@ declare var $: any;
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
     <div style="text-align:center">
-      <h1>
+      <h1 class="welcome">
         Welcome to {{title}}!
       </h1>
       <h2>{{ChangeDetect}}</h2>
@@ -27,6 +27,7 @@ declare var $: any;
     </ul>
     
   `,
+  styleUrls: ['app.component.css'],
   styles: ['.start-links {color: green;}']
 })
 export class AppComponent implements OnInit {
