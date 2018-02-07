@@ -7,3 +7,9 @@ A minimum project to learn aot with Angular5 and rollup. Also demonstrate how to
 3. `npm run serve`: copy the necessary files into the `serve/` directory, and serve this folder with lite-server.
 4. `npm run clean`: clean `compile_output/` and `serve/`.
 5. `npm run aot`: "npm run clean && npm run compile && npm run rollup && npm run serve".
+
+## emit control
+* [skipMetadataEmit](https://angular.io/guide/aot-compiler#skipmetadataemit) in `src\tsconfig.app.json` determine whether or not **Angular Compiler** emit `.metadata.json` files.
+* [skipTemplateCodegen](https://angular.io/guide/aot-compiler#skiptemplatecodegen) in `src\tsconfig.app.json` determine whether or not **Angular Compiler** emit `.ngfactory.js` and `.ngstyle.js` files.
+* `declaration` in `tsconfig.json` determine whether or not **TypeScript Compiler** emit `.d.ts` definition files.
+* `sourceMap` in `tsconfig.json` determine whether or not **TypeScript Compiler** emit `.js.map` sourcemap files.
